@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aureliano Soares | Desenvolvedor Back-end</title>
-  <meta name="description" content="Portfólio de Aureliano Soares — desenvolvedor back-end, automações com IA, n8n e plataformas SaaS.">
-  <meta property="og:title" content="Aureliano Soares | Desenvolvedor Back-end">
+  <title>Neto Dev | Aureliano Soares — Desenvolvedor Back-end</title>
+  <meta name="description" content="Neto Dev — portfólio de Aureliano Soares, desenvolvedor back-end: APIs, automações com IA, n8n e plataformas SaaS.">
+  <meta name="theme-color" content="#0A0A0B">
+  <link rel="canonical" href="https://netodev.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://netodev.com.br/">
+  <meta property="og:site_name" content="Neto Dev">
+  <meta property="og:title" content="Neto Dev | Aureliano Soares — Desenvolvedor Back-end">
   <meta property="og:description" content="APIs, automações com IA, n8n e plataformas SaaS.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a001b'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='700' font-size='28' fill='%232b69fb'>AS</text></svg>">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,7 +23,7 @@
   <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#inicio" class="logo" aria-label="Início"><span>AS</span>.dev</a>
+      <a href="#inicio" class="logo" aria-label="Neto Dev — início"><span class="logo-mark">N</span>Neto<b>Dev</b></a>
       <nav class="nav-links" id="navLinks">
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
@@ -39,8 +44,8 @@
     <div class="hero-glow"></div>
     <div class="hero-inner">
       <div class="hero-text">
-        <p class="eyebrow">Olá, eu sou</p>
-        <h1>Aureliano<br><span class="grad">Soares</span></h1>
+        <p class="status"><i></i>Disponível para novos projetos</p>
+        <h1>Aureliano<br>Soares<span class="hot">.</span></h1>
         <p class="hero-role">Desenvolvedor <span class="rotator" id="rotator">Back-end</span></p>
         <p class="hero-sub">Projeto APIs robustas, orquestro soluções com IA e construo produtos SaaS escaláveis que otimizam processos e geram impacto direto no negócio.</p>
         <div class="hero-cta">
@@ -54,17 +59,10 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="code-window">
-          <div class="cw-bar"><i></i><i></i><i></i><span>lead-agent.ts</span></div>
-<pre class="cw-code" id="typed"></pre>
-        </div>
-        <div class="float-chip c1">n8n</div>
-        <div class="float-chip c2">PostgreSQL</div>
-        <div class="float-chip c3">LLMs</div>
+      <div class="hero-image">
+        <img src="img/hero-setup.svg" alt="Ilustração de um computador em uma mesa de trabalho" width="600" height="460">
       </div>
     </div>
-    <svg class="curve" viewBox="0 0 1387 79" preserveAspectRatio="none"><path d="M-100 0C-100 0 218.416 55.835 693.5 55.835C1168.58 55.835 1487 0 1487 0V79H-100V0Z"/></svg>
   </section>
 
   <!-- ===== SOBRE ===== -->
@@ -77,7 +75,7 @@
         <p>Atuo fortemente com integrações e automações complexas em <strong>n8n</strong>, construindo soluções de atendimento e chatbots com IA para WhatsApp, integrando APIs de terceiros com OAuth 2.0 e orquestrando LLMs para extração estruturada de dados, classificação de intenção e processamento de linguagem natural.</p>
       </div>
       <div class="stats reveal">
-        <div class="stat"><b>7+</b><span>projetos entregues</span></div>
+        <div class="stat"><b>7<em>+</em></b><span>projetos entregues</span></div>
         <div class="stat"><b>24/7</b><span>agentes de IA em produção</span></div>
         <div class="stat"><b>SaaS</b><span>web + mobile</span></div>
         <div class="stat"><b>2026</b><span>Sistemas de Informação</span></div>
@@ -101,7 +99,7 @@
       </div>
       <div class="project-grid" id="projectGrid"></div>
       <div class="more reveal">
-        <a href="https://github.com/yunknet?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost-dark"><svg><use href="#i-github"/></svg> Mais no GitHub</a>
+        <a href="https://github.com/yunknet?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost"><svg><use href="#i-github"/></svg> Mais no GitHub</a>
       </div>
     </div>
   </section>
@@ -165,9 +163,8 @@
 
   <!-- ===== CONTATO ===== -->
   <section class="contact" id="contato">
-    <svg class="curve curve-top" viewBox="0 0 1387 79" preserveAspectRatio="none"><path d="M-100 79C-100 79 218.416 23.165 693.5 23.165C1168.58 23.165 1487 79 1487 79V0H-100V79Z"/></svg>
     <div class="container contact-inner reveal">
-      <p class="section-tag light">Contato</p>
+      <p class="section-tag">Contato</p>
       <h2>Vamos construir algo juntos?</h2>
       <p>Estou aberto a oportunidades como Desenvolvedor Back-end / Engenheiro de Software e a projetos de automação com IA.</p>
       <div class="social-big">
@@ -177,7 +174,7 @@
       </div>
     </div>
     <footer class="footer">
-      <p>© <span id="year"></span> Aureliano Soares da Silva Neto</p>
+      <p>© <span id="year"></span> <b>Neto Dev</b> · Aureliano Soares da Silva Neto · netodev.com.br</p>
       <a href="#inicio" class="to-top" aria-label="Voltar ao topo">↑</a>
     </footer>
   </section>

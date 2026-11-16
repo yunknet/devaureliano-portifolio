@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" font-family="Arial, sans-serif">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1c20"/><stop offset="1" stop-color="#0f0f11"/></linearGradient></defs>
+  <rect width="640" height="380" fill="url(#bg)"/>
+  <g opacity=".12" fill="#fff"><circle cx="40" cy="340" r="120"/></g>
+  <!-- calendar -->
+  <rect x="70" y="50" width="300" height="290" rx="16" fill="#fff"/>
+  <rect x="70" y="50" width="300" height="60" rx="16" fill="#1f2937"/><rect x="70" y="94" width="300" height="16" fill="#1f2937"/>
+  <rect x="110" y="34" width="10" height="32" rx="5" fill="#374151"/><rect x="320" y="34" width="10" height="32" rx="5" fill="#374151"/>
+  <text x="220" y="90" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">Novembro</text>
+  <g font-size="14" fill="#6b7280" text-anchor="middle">
+    <text x="104" y="138">D</text><text x="144" y="138">S</text><text x="184" y="138">T</text><text x="224" y="138">Q</text><text x="264" y="138">Q</text><text x="304" y="138">S</text><text x="344" y="138">S</text>
+  </g>
+  <g font-size="15" fill="#111827" text-anchor="middle">
+    <text x="104" y="174">2</text><text x="144" y="174">3</text><text x="184" y="174">4</text><text x="224" y="174">5</text><text x="264" y="174">6</text><text x="304" y="174">7</text><text x="344" y="174">8</text>
+    <text x="104" y="214">9</text><text x="144" y="214">10</text><text x="184" y="214">11</text><text x="264" y="214">13</text><text x="304" y="214">14</text><text x="344" y="214">15</text>
+    <text x="104" y="254">16</text><text x="144" y="254">17</text><text x="184" y="254">18</text><text x="224" y="254">19</text><text x="264" y="254">20</text><text x="304" y="254">21</text><text x="344" y="254">22</text>
+    <text x="104" y="294">23</text><text x="144" y="294">24</text><text x="184" y="294">25</text><text x="224" y="294">26</text><text x="264" y="294">27</text><text x="304" y="294">28</text><text x="344" y="294">29</text>
+  </g>
+  <circle cx="224" cy="209" r="17" fill="#FF5A2E"/><text x="224" y="214" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">12</text>
+  <!-- slots -->
+  <g transform="translate(400 70)">
+    <rect width="190" height="250" rx="16" fill="#1f2937"/>
+    <text x="20" y="36" font-size="15" font-weight="700" fill="#fff">Horários</text>
+    <g font-size="14" font-weight="700">
+      <rect x="18" y="56" width="154" height="36" rx="10" fill="#374151"/><text x="36" y="79" fill="#9ca3af">09:00</text><rect x="104" y="68" width="52" height="12" rx="6" fill="#4b5563"/>
+      <rect x="18" y="102" width="154" height="36" rx="10" fill="#FF5A2E"/><text x="36" y="125" fill="#1f2937">10:30</text><path d="M134 120 l6 6 l12 -12" stroke="#1f2937" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="18" y="148" width="154" height="36" rx="10" fill="#374151"/><text x="36" y="171" fill="#e5e7eb">14:00</text>
+      <rect x="18" y="194" width="154" height="36" rx="10" fill="#374151"/><text x="36" y="217" fill="#e5e7eb">16:30</text>
+    </g>
+  </g>
+  <!-- scissors -->
+  <g transform="translate(560 40) rotate(30)" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round">
+    <circle cx="-14" cy="34" r="9"/><circle cx="14" cy="34" r="9"/><path d="M-8 26 L10 -14 M8 26 L-10 -14"/>
+  </g>
+</svg>

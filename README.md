@@ -1,6 +1,6 @@
-# Portfólio — Aureliano Soares
+# Neto Dev — Portfólio de Aureliano Soares
 
-Portfólio pessoal de **Aureliano Soares da Silva Neto**, desenvolvedor back-end com foco em APIs, automações com IA (n8n, LLMs) e plataformas SaaS.
+Site: **https://netodev.com.br** — portfólio pessoal de **Aureliano Soares da Silva Neto**, desenvolvedor back-end com foco em APIs, automações com IA (n8n, LLMs) e plataformas SaaS.
 
 - HTML, CSS e JavaScript puros — sem build
 - Projetos com filtros e modal de detalhes (dados em `script.js`)

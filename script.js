@@ -2,7 +2,7 @@
 const projects = [
   {
     title: 'SaaS roiLead',
-    cat: 'saas', catLabel: 'SaaS', icon: 'roi', cover: 'g1',
+    cat: 'saas', catLabel: 'SaaS', img: 'img/roilead.png', logo: 'dark',
     short: 'Plataforma omnichannel com CRM e gestão estratégica de leads, com IA para WhatsApp e app mobile nativo.',
     text: [
       'Plataforma omnichannel com CRM e gestão estratégica de leads. Desenvolvida em React (Vite) com arquitetura serverless em tempo real (Supabase, TypeScript e PostgreSQL).',
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: 'App Cúpula de Leads',
-    cat: 'saas', catLabel: 'Mobile', icon: '{ ⚡ }', cover: 'g2',
+    cat: 'saas', catLabel: 'Mobile', img: 'img/cupula.png', logo: 'light',
     short: 'Extensão mobile do roiLead: distribuição competitiva de leads em tempo real, com push e roleta.',
     text: [
       'Extensão mobile do ecossistema roiLead. Aplicativo para distribuição competitiva e captura de leads em tempo real, desenvolvido em React Native (Expo) com backend TypeScript serverless (Supabase Edge Functions e PostgreSQL).',
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: 'Agente de Vendas com IA — Melhor Versão',
-    cat: 'ia', catLabel: 'IA & Automação', icon: 'AI', cover: 'g7',
+    cat: 'ia', catLabel: 'IA & Automação', img: 'img/agente-ia.svg',
     short: 'Vendas 24/7 no WhatsApp com agente LLM, voz clonada (TTS), filas, Redis e Meta CAPI — com o influenciador Pedro Lotz.',
     text: [
       'Sistema de vendas automatizado via WhatsApp para uma operação de infoprodutos e suplementos (com o influenciador Pedro Lotz), com arquitetura híbrida entre o DataCrazy CRM e o n8n.',
@@ -37,7 +37,7 @@ const projects = [
   },
   {
     title: 'Sistema de Orçamento Inteligente',
-    cat: 'ia', catLabel: 'IA & Automação', icon: 'm²', cover: 'g3',
+    cat: 'ia', catLabel: 'IA & Automação', img: 'img/pontual.svg', logo: 'deep',
     short: 'Orçamentos automáticos para vidraçaria com agente multimodal no WhatsApp, Whisper, visão computacional e PDFs.',
     text: [
       'Plataforma de orçamento automatizado para vidraçaria, que substitui o antigo processo manual de croqui em papel e planilha Excel/VBA por um fluxo digital guiado por IA.',
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     title: 'API de Cadastro em PHP',
-    cat: 'web', catLabel: 'API', icon: '</>', cover: 'g5',
+    cat: 'web', catLabel: 'API', img: 'img/api-php.svg',
     short: 'API CRUD de cadastro de pessoas em PHP e MySQL, com upload de foto e script SQL de criação do banco.',
     text: [
       'API de cadastro de pessoas, desenvolvida em PHP e MySQL. Permite operações CRUD com nome, idade, telefone, e-mail e foto.',
@@ -60,7 +60,7 @@ const projects = [
   },
   {
     title: 'Sistema de Controle e Gerenciamento',
-    cat: 'web', catLabel: 'Web', icon: '▦', cover: 'g6',
+    cat: 'web', catLabel: 'Web', img: 'img/gerenciamento.svg',
     short: 'Gestão CRUD de clientes, produtos, encomendas, fornecedores e manutenção com PHP, MySQL e Bootstrap.',
     text: [
       'Sistema web de gerenciamento CRUD para clientes, produtos, componentes, encomendas, fornecedores e manutenção.',
@@ -71,7 +71,7 @@ const projects = [
   },
   {
     title: 'Sistema Web de Agendamento',
-    cat: 'web', catLabel: 'Web', icon: '✂', cover: 'g4',
+    cat: 'web', catLabel: 'Web', img: 'img/agendamento.svg',
     short: 'Agendamento para barbearia em Java Spring Boot, banco H2 e containerização com Docker.',
     text: [
       'Sistema web de agendamento para barbearia, desenvolvido em Java (Spring Boot) com banco H2 em memória.',
@@ -92,11 +92,13 @@ function linksHTML(p) {
   return h;
 }
 
+const coverClass = (p) => (p.logo ? `cover logo-cover ${p.logo}` : "cover");
+
 // ===== Render dos cards =====
 const grid = $('#projectGrid');
 grid.innerHTML = projects.map((p, i) => `
   <article class="project reveal" data-cat="${p.cat}" data-i="${i}" tabindex="0">
-    <div class="cover ${p.cover}"><span class="badge">${p.catLabel}</span><span class="cover-icon">${esc(p.icon)}</span></div>
+    <div class="${coverClass(p)}"><span class="badge">${p.catLabel}</span><img src="${p.img}" alt="${esc(p.title)}" loading="lazy"></div>
     <div class="project-text">
       <h3>${p.title}</h3>
       <p>${p.short}</p>
@@ -120,7 +122,9 @@ $$('#filters .chip').forEach((btn) => btn.addEventListener('click', () => {
 const modal = $('#modal');
 function openModal(i) {
   const p = projects[i];
-  $('#modalCover').className = `modal-cover ${p.cover}`;
+  const mc = $("#modalCover");
+  mc.className = `modal-cover ${coverClass(p)}`;
+  mc.innerHTML = `<img src="${p.img}" alt="">`;
   $('#modalCat').textContent = p.catLabel;
   $('#modalTitle').textContent = p.title;
   $('#modalText').innerHTML = p.text.map((t) => `<p>${esc(t)}</p>`).join('');
@@ -180,7 +184,7 @@ const revObs = new IntersectionObserver((entries) => {
 $$('.reveal').forEach((el) => revObs.observe(el));
 
 // ===== Palavras rotativas =====
-const words = ['Back-end', 'de Automações com IA', 'Full-stack', 'de Plataformas SaaS', 'n8n & APIs'];
+const words = ['Back-end', 'de Automações com IA', 'Full-stack', 'de Plataformas SaaS'];
 const rot = $('#rotator');
 let wi = 0, ci = words[0].length, deleting = true;
 function rotate() {
@@ -194,43 +198,5 @@ function rotate() {
 }
 setTimeout(rotate, 2200);
 
-// ===== Código digitado no hero =====
-const codeLines = [
-  ['c', '// agente de qualificação de leads'],
-  ['k', 'const ', '', 'lead = ', 'k', 'await ', 'f', 'whatsapp', '', '.receive(msg);'],
-  ['k', 'const ', '', 'intent = ', 'k', 'await ', 'f', 'llm', '', '.classify(lead.text);'],
-  [''],
-  ['k', 'if ', '', '(intent === ', 's', "'comprar'", '', ') {'],
-  ['', '  ', 'k', 'await ', 'f', 'crm', '', '.update(lead.id, { score: ', 'n', '98', '', ' });'],
-  ['', '  ', 'k', 'await ', 'f', 'handoff', '', '(lead, ', 's', "'vendedor'", '', ');'],
-  ['', '} ', 'k', 'else ', '', '{'],
-  ['', '  ', 'k', 'await ', 'f', 'agent', '', '.reply(lead, { memory: ', 's', "'postgres'", '', ' });'],
-  ['', '}'],
-  [''],
-  ['c', '// ✔ atendimento 24/7, sem intervenção humana']
-];
-const typed = $('#typed');
-const flat = [];
-codeLines.forEach((line) => {
-  if (line.length === 1) { flat.push([line[0], line[0] === 'c' ? '' : '']); }
-  for (let i = 0; i < line.length; i += 2) {
-    const cls = line[i], txt = line[i + 1] ?? (line.length === 2 ? line[1] : '');
-    if (txt) [...txt].forEach((ch) => flat.push([cls, ch]));
-  }
-  flat.push(['', '\n']);
-});
-let ti = 0;
-function typeCode() {
-  if (ti >= flat.length) return;
-  const [cls, ch] = flat[ti++];
-  if (!ch) return typeCode();
-  if (cls) {
-    const last = typed.lastElementChild;
-    if (last && last.className === cls && typed.lastChild === last) last.textContent += ch;
-    else { const s = document.createElement('span'); s.className = cls; s.textContent = ch; typed.appendChild(s); }
-  } else typed.appendChild(document.createTextNode(ch));
-  setTimeout(typeCode, ch === '\n' ? 90 : 18);
-}
-setTimeout(typeCode, 700);
 
 $('#year').textContent = new Date().getFullYear();
