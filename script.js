@@ -26,9 +26,9 @@ const projects = [
   {
     title: 'Agente de Vendas com IA — Melhor Versão',
     cat: 'ia', catLabel: 'IA & Automação', img: 'img/agente-ia.svg',
-    short: 'Vendas 24/7 no WhatsApp com agente LLM, voz clonada (TTS), filas, Redis e Meta CAPI — com o influenciador Pedro Lotz.',
+    short: 'Vendas 24/7 no WhatsApp com agente LLM, voz clonada (TTS), filas, Redis e Meta CAPI — com o influenciador <a class="inline-link" href="https://www.instagram.com/pedrolotz/" target="_blank" rel="noopener">Pedro Lotz</a>.',
     text: [
-      'Sistema de vendas automatizado via WhatsApp para uma operação de infoprodutos e suplementos (com o influenciador Pedro Lotz), com arquitetura híbrida entre o DataCrazy CRM e o n8n.',
+      'Sistema de vendas automatizado via WhatsApp para uma operação de infoprodutos e suplementos (com o influenciador <a class="inline-link" href="https://www.instagram.com/pedrolotz/" target="_blank" rel="noopener">Pedro Lotz</a>), com arquitetura híbrida entre o DataCrazy CRM e o n8n.',
       'O núcleo é um agente conversacional com LLM que segue os scripts comerciais do cliente: conduz o lead pela esteira de produtos, trata objeções e oferece downsell de forma estratégica. O agente também dispara áudios personalizados com a voz clonada do especialista por síntese TTS.',
       'A integração usa chamadas HTTP síncronas entre CRM e n8n, com envio pelos blocos nativos do CRM para contornar o rate limit da API. Em caso de timeout, o fallback é a API REST, com filas e exponential backoff. Inclui scripts JavaScript serverless (async/await) no CRM e debounce em Redis para agrupar mensagens fragmentadas antes do envio à IA.',
       'Há ainda sanitização de dados do lead, controle de estado para transferência ao atendimento humano e webhooks de pagamento que pausam a IA na compra aprovada. O rastreamento de conversões é server-side via Meta Conversions API (CAPI/CTWA). Resultado: atendimento 24/7, recuperação de vendas e maior conversão sem intervenção humana.'
@@ -127,7 +127,7 @@ function openModal(i) {
   mc.innerHTML = `<img src="${p.img}" alt="">`;
   $('#modalCat').textContent = p.catLabel;
   $('#modalTitle').textContent = p.title;
-  $('#modalText').innerHTML = p.text.map((t) => `<p>${esc(t)}</p>`).join('');
+  $("#modalText").innerHTML = p.text.map((t) => `<p>${t}</p>`).join("");
   $('#modalTags').innerHTML = p.tags.map((t) => `<span>${t}</span>`).join('');
   $('#modalLinks').innerHTML = linksHTML(p);
   modal.classList.add('open');
