@@ -63,6 +63,7 @@ img { display: block; max-width: 100%; }
 .status { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--mono); font-size: .8rem; color: var(--fg2); border: 1px solid var(--line2); border-radius: 999px; padding: .35rem .85rem; margin-bottom: 1.6rem; }
 .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--hot); animation: pulse 2s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,90,46,.6); } 70% { box-shadow: 0 0 0 9px rgba(255,90,46,0); } 100% { box-shadow: 0 0 0 0 rgba(255,90,46,0); } }
+.eyebrow { font-family: var(--mono); color: var(--hot); font-size: 1rem; margin-bottom: .4rem; }
 .hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); line-height: 1; font-weight: 700; letter-spacing: -.045em; }
 .hero-role { font-size: clamp(1.1rem, 2.3vw, 1.5rem); font-weight: 500; margin: 1.2rem 0 .9rem; color: var(--fg2); }
 .rotator { color: var(--hot); display: inline-block; border-right: 2px solid var(--hot); padding-right: 4px; animation: caret .8s step-end infinite; white-space: nowrap; }
