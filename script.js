@@ -92,13 +92,15 @@ function linksHTML(p) {
   return h;
 }
 
+const ASSET_V = '202611161144';
+const imgSrc = (p) => `${p.img}?v=${ASSET_V}`;
 const coverClass = (p) => (p.logo ? `cover logo-cover ${p.logo}` : "cover");
 
 // ===== Render dos cards =====
 const grid = $('#projectGrid');
 grid.innerHTML = projects.map((p, i) => `
   <article class="project reveal" data-cat="${p.cat}" data-i="${i}" tabindex="0">
-    <div class="${coverClass(p)}"><span class="badge">${p.catLabel}</span><img src="${p.img}" alt="${esc(p.title)}" loading="lazy"></div>
+    <div class="${coverClass(p)}"><span class="badge">${p.catLabel}</span><img src="${imgSrc(p)}" alt="${esc(p.title)}" width="640" height="380"></div>
     <div class="project-text">
       <h3>${p.title}</h3>
       <p>${p.short}</p>
@@ -124,7 +126,7 @@ function openModal(i) {
   const p = projects[i];
   const mc = $("#modalCover");
   mc.className = `modal-cover ${coverClass(p)}`;
-  mc.innerHTML = `<img src="${p.img}" alt="">`;
+  mc.innerHTML = `<img src="${imgSrc(p)}" alt="">`;
   $('#modalCat').textContent = p.catLabel;
   $('#modalTitle').textContent = p.title;
   $("#modalText").innerHTML = p.text.map((t) => `<p>${t}</p>`).join("");
@@ -170,18 +172,22 @@ $$('a', links).forEach((a) => a.addEventListener('click', () => {
 
 // link ativo
 const sections = $$('section[id]');
-const navObs = new IntersectionObserver((entries) => {
+const hasIO = "IntersectionObserver" in window;
+const navObs = hasIO && new IntersectionObserver((entries) => {
   entries.forEach((en) => {
     if (en.isIntersecting) $$('.nav-links a').forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${en.target.id}`));
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
-sections.forEach((s) => navObs.observe(s));
+if (navObs) sections.forEach((s) => navObs.observe(s));
 
 // ===== Reveal on scroll =====
-const revObs = new IntersectionObserver((entries) => {
+const revObs = hasIO && new IntersectionObserver((entries) => {
   entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('visible'); revObs.unobserve(en.target); } });
 }, { threshold: 0.12 });
-$$('.reveal').forEach((el) => revObs.observe(el));
+if (revObs) $$('.reveal').forEach((el) => revObs.observe(el));
+else $$('.reveal').forEach((el) => el.classList.add('visible'));
+// garantia: se a animação não disparar, mostra o que já está na tela após 3s
+setTimeout(() => $$('.reveal:not(.visible)').forEach((el) => { const r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('visible'); }), 3000);
 
 // ===== Palavras rotativas =====
 const words = ['Back-end', 'de Automações com IA', 'Full-stack', 'de Plataformas SaaS'];

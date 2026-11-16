@@ -28,7 +28,7 @@ img { display: block; max-width: 100%; }
 .small { font-size: .85rem; margin-top: 1rem; }
 
 /* ===== NAV ===== */
-.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; border-top: 3px solid var(--hot); transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; border-top: 3px solid var(--hot); transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
 .nav.scrolled { background: rgba(10, 10, 11, .72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: .9rem 1.25rem; display: flex; align-items: center; gap: 2rem; }
 .logo { font-weight: 700; font-size: 1.3rem; letter-spacing: -.03em; display: flex; align-items: center; gap: .3rem; }
@@ -51,8 +51,8 @@ img { display: block; max-width: 100%; }
 
 /* ===== HERO ===== */
 .hero { position: relative; min-height: min(100vh, 900px); display: flex; align-items: center; padding: 7rem 0 4rem; overflow: hidden; border-bottom: 1px solid var(--line); }
-.hero-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(520px 360px at 12% 30%, rgba(255, 90, 46, .08), transparent 70%); }
-.hero::before { content: ''; position: absolute; inset: 0; pointer-events: none;
+.hero-glow { position: absolute; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; background: radial-gradient(520px 360px at 12% 30%, rgba(255, 90, 46, .08), transparent 70%); }
+.hero::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none;
   background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 45% 60% at 22% 45%, #000 30%, transparent 80%);
@@ -111,10 +111,10 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -.
 .project { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .3s, border-color .3s; cursor: pointer; }
 .project:hover { transform: translateY(-5px); border-color: rgba(255, 90, 46, .55); }
 .project.hide { display: none; }
-.cover { position: relative; aspect-ratio: 16 / 9.5; overflow: hidden; background: #1a1a1d; border-bottom: 1px solid var(--line); }
-.cover > img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
-.cover.logo-cover { display: grid; place-items: center; }
-.cover.logo-cover > img { width: auto; height: 58%; max-width: 70%; object-fit: contain; }
+.cover { position: relative; height: 0; padding-top: 59.375%; overflow: hidden; background: #1a1a1d; border-bottom: 1px solid var(--line); }
+.cover > img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.cover.logo-cover { display: block; }
+.cover.logo-cover > img { top: 21%; left: 15%; width: 70%; height: 58%; object-fit: contain; }
 .cover.logo-cover.dark { background: radial-gradient(circle at 50% 60%, rgba(255,90,46,.14), transparent 65%), #000; }
 .cover.logo-cover.light { background: radial-gradient(circle at 50% 60%, rgba(255,90,46,.12), transparent 65%), var(--fg); }
 .cover.logo-cover.deep { background: radial-gradient(circle at 50% 60%, rgba(46,174,222,.22), transparent 65%), #07151e; }
@@ -155,7 +155,7 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -.
 
 /* contact */
 .contact { position: relative; padding: 7rem 0 0; overflow: hidden; }
-.contact::before { content: ''; position: absolute; inset: 0; background: radial-gradient(600px 300px at 50% 35%, rgba(255,90,46,.1), transparent 70%); pointer-events: none; }
+.contact::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: radial-gradient(600px 300px at 50% 35%, rgba(255,90,46,.1), transparent 70%); pointer-events: none; }
 .contact-inner { position: relative; text-align: center; max-width: 720px; }
 .contact-inner > p:not(.section-tag) { color: var(--fg2); }
 .contact h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
@@ -170,15 +170,15 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -.
 .to-top:hover { background: var(--hot); border-color: var(--hot); color: var(--bg); }
 
 /* modal */
-.modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 1rem; visibility: hidden; opacity: 0; transition: opacity .25s, visibility .25s; }
+.modal { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 100; display: grid; place-items: center; padding: 1rem; visibility: hidden; opacity: 0; transition: opacity .25s, visibility .25s; }
 .modal.open { visibility: visible; opacity: 1; }
-.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.8); backdrop-filter: blur(6px); }
+.modal-backdrop { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0,0,0,.8); backdrop-filter: blur(6px); }
 .modal-box { position: relative; width: 100%; max-width: 760px; max-height: 90vh; overflow-y: auto; background: var(--card); border: 1px solid var(--line2); border-radius: 20px; transform: translateY(20px) scale(.98); transition: transform .3s; }
 .modal.open .modal-box { transform: none; }
 .modal-close { position: absolute; top: 12px; right: 12px; z-index: 2; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line2); background: rgba(10,10,11,.75); color: var(--fg); font-size: 1.4rem; line-height: 1; }
 .modal-close:hover { border-color: var(--hot); color: var(--hot); }
-.modal-cover { aspect-ratio: 16 / 7; }
-.modal-cover.logo-cover > img { height: 55%; }
+.modal-cover.cover { padding-top: 43.75%; }
+.modal-cover.logo-cover > img { top: 22%; height: 56%; }
 .modal-body { padding: 1.8rem 2rem 2rem; }
 .modal-body h3 { font-size: 1.5rem; font-weight: 600; letter-spacing: -.02em; margin-bottom: 1rem; line-height: 1.25; }
 .modal-body #modalText p { color: var(--fg2); margin-bottom: .9rem; font-size: .95rem; }
@@ -232,7 +232,7 @@ body.lock { overflow: hidden; }
 .hero-image img { position: relative; z-index: 1; width: 100%; height: auto; }
 /* bordas suaves: degradê na cor do fundo por cima da foto (funciona em qualquer navegador) */
 .hero-image::after {
-  content: ""; position: absolute; inset: -1px; z-index: 2; pointer-events: none;
+  content: ""; position: absolute; top: -1px; right: -1px; bottom: -1px; left: -1px; z-index: 2; pointer-events: none;
   background:
     linear-gradient(to bottom, transparent 58%, var(--bg) 97%),
     linear-gradient(to top, transparent 85%, var(--bg) 100%),
