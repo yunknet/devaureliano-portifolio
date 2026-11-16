@@ -31,7 +31,7 @@ img { display: block; max-width: 100%; }
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; border-top: 3px solid var(--hot); transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
 .nav.scrolled { background: rgba(10, 10, 11, .72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: .9rem 1.25rem; display: flex; align-items: center; gap: 2rem; }
-.logo { font-weight: 700; font-size: 1.3rem; letter-spacing: -.03em; display: flex; align-items: center; gap: .3rem; }
+.logo { font-weight: 700; font-size: 1.3rem; letter-spacing: -.03em; }
 .logo-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--hot); color: var(--bg); display: grid; place-items: center; font-family: var(--mono); font-size: .95rem; font-weight: 500; }
 .logo b { color: var(--hot); font-weight: 700; }
 .nav-links { display: flex; gap: 1.75rem; margin-left: auto; font-size: .93rem; }
