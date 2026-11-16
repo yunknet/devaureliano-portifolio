@@ -1,4 +1,4 @@
-# net.dev — Portfólio de Aureliano Soares
+# neto.dev — Portfólio de Aureliano Soares
 
 Site: **https://netodev.com.br** — portfólio pessoal de **Aureliano Soares da Silva Neto**, desenvolvedor back-end com foco em APIs, automações com IA (n8n, LLMs) e plataformas SaaS.
 
