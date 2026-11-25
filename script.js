@@ -48,18 +48,6 @@ const projects = [
     site: 'https://pontualtemper.mivaia.com/'
   },
   {
-    title: 'YNK Sistemas — Agentes de IA para WhatsApp',
-    cat: 'saas', catLabel: 'SaaS', img: 'img/ynk.jpg',
-    short: 'SaaS de autoatendimento: o cliente conecta o WhatsApp, personaliza e ativa seu próprio agente de IA em minutos.',
-    text: [
-      'Plataforma SaaS de autoatendimento para agentes de Inteligência Artificial no WhatsApp. O cliente cria a conta, conecta o número pelo QR Code e personaliza o comportamento do seu assistente virtual sem depender de suporte técnico.',
-      'Front-end em React, Vite e TypeScript com Tailwind e shadcn/ui; back-end serverless em Supabase (PostgreSQL, Auth e Edge Functions). A conexão com o WhatsApp é feita pela Evolution API, e as assinaturas são cobradas via Hubla, com checkout, webhook de pagamento e verificação automática do plano ativo.',
-      'Inclui painel com gestão de leads, fluxo completo de cadastro e recuperação de senha, página de planos e páginas de política de privacidade e termos de uso.'
-    ],
-    tags: ['React', 'TypeScript', 'Supabase', 'Edge Functions', 'Evolution API', 'Hubla', 'IA'],
-    code: 'https://github.com/yunknet/ynk'
-  },
-  {
     title: 'Yuri Soares — Site e Simulador de Consórcio',
     cat: 'web', catLabel: 'Web', img: 'img/yuri.jpg',
     short: 'Site de um especialista em consórcios com simulador gratuito que envia o lead ao WhatsApp, com rodízio entre consultores.',
@@ -97,30 +85,6 @@ const projects = [
     tags: ['Node.js', 'Express', 'scrypt', 'Webhooks', 'Docker', 'VPS'],
     site: 'https://laracastelli.mivaia.com/',
     code: 'https://github.com/yunknet/app-laracastelli'
-  },
-  {
-    title: 'Biblioteca Veterinária — Dra. Nataly Michel',
-    cat: 'web', catLabel: 'Web App', img: 'img/nataly.jpg',
-    short: 'App de consulta clínica veterinária com 170 fichas, 611 medicamentos, busca, filtros, favoritos e notas.',
-    text: [
-      'Aplicativo de consulta e estudo em clínica de pequenos animais para uma médica veterinária: 170 fichas clínicas, 611 entradas de medicamentos com posologia em mg/kg e 17 especialidades catalogadas.',
-      'Busca sem distinção de acentos, filtros por especialidade, espécie, via e tipo de conteúdo, leitor de fichas, favoritos, notas com salvamento local e exportação, progresso de estudo, histórico de leitura e tema claro/escuro.',
-      'Feito em JavaScript puro, sem dependências, com o acervo estruturado em JSON por scripts de extração e verificação em Python, e servido com Nginx em Docker.'
-    ],
-    tags: ['JavaScript', 'Python', 'JSON', 'Nginx', 'Docker'],
-    code: 'https://github.com/yunknet/nataly-med-vet'
-  },
-  {
-    title: 'Farol da Melhor Idade',
-    cat: 'web', catLabel: 'Web', img: 'img/farol.jpg', logo: 'light',
-    short: 'Plataforma para um asilo em Pirapora (MG): vitrine de doações, voluntariado e agendamento de visitas.',
-    text: [
-      'Plataforma web para o Lar dos Idosos São Vicente de Paulo, em Pirapora (MG), feita como projeto de extensão (UCE III) para aproximar a comunidade da instituição.',
-      'Inclui vitrine de necessidades com sinalização de urgência (alimentos, higiene, medicamentos), cadastro de voluntários com habilidades e disponibilidade, calendário para agendamento de visitas e contato direto pelo WhatsApp.',
-      'Desenvolvida em TypeScript com Vite, com política de privacidade e consentimento de cookies conforme a LGPD.'
-    ],
-    tags: ['TypeScript', 'Vite', 'LGPD', 'WhatsApp'],
-    code: 'https://github.com/yunknet/farol_da_melhor_idade'
   },
   {
     title: 'API de Cadastro em PHP',
