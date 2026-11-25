@@ -48,6 +48,81 @@ const projects = [
     site: 'https://pontualtemper.mivaia.com/'
   },
   {
+    title: 'YNK Sistemas — Agentes de IA para WhatsApp',
+    cat: 'saas', catLabel: 'SaaS', img: 'img/ynk.jpg',
+    short: 'SaaS de autoatendimento: o cliente conecta o WhatsApp, personaliza e ativa seu próprio agente de IA em minutos.',
+    text: [
+      'Plataforma SaaS de autoatendimento para agentes de Inteligência Artificial no WhatsApp. O cliente cria a conta, conecta o número pelo QR Code e personaliza o comportamento do seu assistente virtual sem depender de suporte técnico.',
+      'Front-end em React, Vite e TypeScript com Tailwind e shadcn/ui; back-end serverless em Supabase (PostgreSQL, Auth e Edge Functions). A conexão com o WhatsApp é feita pela Evolution API, e as assinaturas são cobradas via Hubla, com checkout, webhook de pagamento e verificação automática do plano ativo.',
+      'Inclui painel com gestão de leads, fluxo completo de cadastro e recuperação de senha, página de planos e páginas de política de privacidade e termos de uso.'
+    ],
+    tags: ['React', 'TypeScript', 'Supabase', 'Edge Functions', 'Evolution API', 'Hubla', 'IA'],
+    code: 'https://github.com/yunknet/ynk'
+  },
+  {
+    title: 'Yuri Soares — Site e Simulador de Consórcio',
+    cat: 'web', catLabel: 'Web', img: 'img/yuri.jpg',
+    short: 'Site de um especialista em consórcios com simulador gratuito que envia o lead ao WhatsApp, com rodízio entre consultores.',
+    text: [
+      'Site institucional e página de captação para um especialista em consórcios, com simulador gratuito: o visitante escolhe o tipo de consórcio, o valor do crédito e o objetivo (com slider de lance) e é levado ao WhatsApp com a simulação já preenchida.',
+      'O atendente é escolhido por um rodízio entre consultores: uma API em Node.js/Express com PostgreSQL entrega o lead a quem está há mais tempo sem receber cliente. Se a API demorar mais de 350 ms ou estiver fora do ar, o rodízio local no navegador assume, e o site nunca trava.',
+      'Uma versão de página única do simulador serve de destino para os anúncios pagos, com captura de UTMs, eventos no Meta Pixel e no Google Analytics. Feito em React, Vite, TypeScript e Tailwind, com Docker e deploy no Easypanel.'
+    ],
+    tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Meta Pixel', 'Docker'],
+    site: 'https://yuriconsorcio.com/',
+    code: 'https://github.com/yunknet/yuriconsorcio'
+  },
+  {
+    title: 'Eleva Consórcio — Funil de Vendas e Área do Comprador',
+    cat: 'saas', catLabel: 'Infoproduto', img: 'img/eleva.jpg',
+    short: 'Funil completo de infoproduto: página de vendas, quiz, diagnóstico, checkout Lastlink e área de acesso protegida.',
+    text: [
+      'Funil de vendas de um infoproduto para consultores de consórcio: página de vendas, quiz de perfil, página de diagnóstico personalizada e checkout na Lastlink, com rastreamento de cada etapa do funil.',
+      'Depois da compra, o comprador acessa o conteúdo em uma aplicação separada em Node.js com PostgreSQL. O webhook da Lastlink registra as compras aprovadas, o acesso exige sessão com cookie assinado e HttpOnly, e a situação da compra é conferida a cada requisição.',
+      'O bônus é liberado pelo servidor 7 dias após a compra aprovada, sem depender do relógio do navegador. Inclui limite de tentativas de login, modo escuro, busca, progresso de leitura e comando administrativo para liberar ou revogar acessos.'
+    ],
+    tags: ['Node.js', 'PostgreSQL', 'Webhooks', 'Lastlink', 'JavaScript', 'Docker'],
+    site: 'https://lp.yuriconsorcio.com/',
+    code: 'https://github.com/yunknet/pg-vendas-playbook-yuri'
+  },
+  {
+    title: 'Lara Castelli — App de Treinos e Área de Membros',
+    cat: 'saas', catLabel: 'Web App', img: 'img/laraapp.jpg',
+    short: 'Web app de treinos com login seguro, calendário, fichas com vídeo e painel administrativo, mais página de vendas com quiz.',
+    text: [
+      'Área de membros de um programa de treino e cuidado pós-emagrecimento, com página de vendas e quiz de seis perguntas que direciona a aluna para o perfil certo antes do checkout.',
+      'O web app, em Node.js e Express, tem login com senha derivada por scrypt, sessão opaca em cookie HttpOnly, proteção de origem e limite de requisições. A administração cadastra alunas, suspende acessos e redefine senhas, e o acesso é liberado automaticamente pelo webhook do checkout.',
+      'Para a aluna: painel da semana, registro de água, biblioteca de treinos por mês, calendário com objetivo, nível e frequência, e fichas com exercícios, vídeo, cronômetro e histórico. A equipe faz upload de vídeos MP4 de até 500 MB, armazenados no volume da VPS.'
+    ],
+    tags: ['Node.js', 'Express', 'scrypt', 'Webhooks', 'Docker', 'VPS'],
+    site: 'https://laracastelli.mivaia.com/',
+    code: 'https://github.com/yunknet/app-laracastelli'
+  },
+  {
+    title: 'Biblioteca Veterinária — Dra. Nataly Michel',
+    cat: 'web', catLabel: 'Web App', img: 'img/nataly.jpg',
+    short: 'App de consulta clínica veterinária com 170 fichas, 611 medicamentos, busca, filtros, favoritos e notas.',
+    text: [
+      'Aplicativo de consulta e estudo em clínica de pequenos animais para uma médica veterinária: 170 fichas clínicas, 611 entradas de medicamentos com posologia em mg/kg e 17 especialidades catalogadas.',
+      'Busca sem distinção de acentos, filtros por especialidade, espécie, via e tipo de conteúdo, leitor de fichas, favoritos, notas com salvamento local e exportação, progresso de estudo, histórico de leitura e tema claro/escuro.',
+      'Feito em JavaScript puro, sem dependências, com o acervo estruturado em JSON por scripts de extração e verificação em Python, e servido com Nginx em Docker.'
+    ],
+    tags: ['JavaScript', 'Python', 'JSON', 'Nginx', 'Docker'],
+    code: 'https://github.com/yunknet/nataly-med-vet'
+  },
+  {
+    title: 'Farol da Melhor Idade',
+    cat: 'web', catLabel: 'Web', img: 'img/farol.jpg', logo: 'light',
+    short: 'Plataforma para um asilo em Pirapora (MG): vitrine de doações, voluntariado e agendamento de visitas.',
+    text: [
+      'Plataforma web para o Lar dos Idosos São Vicente de Paulo, em Pirapora (MG), feita como projeto de extensão (UCE III) para aproximar a comunidade da instituição.',
+      'Inclui vitrine de necessidades com sinalização de urgência (alimentos, higiene, medicamentos), cadastro de voluntários com habilidades e disponibilidade, calendário para agendamento de visitas e contato direto pelo WhatsApp.',
+      'Desenvolvida em TypeScript com Vite, com política de privacidade e consentimento de cookies conforme a LGPD.'
+    ],
+    tags: ['TypeScript', 'Vite', 'LGPD', 'WhatsApp'],
+    code: 'https://github.com/yunknet/farol_da_melhor_idade'
+  },
+  {
     title: 'API de Cadastro em PHP',
     cat: 'web', catLabel: 'API', img: 'img/api-php.svg',
     short: 'API CRUD de cadastro de pessoas em PHP e MySQL, com upload de foto e script SQL de criação do banco.',
@@ -92,7 +167,7 @@ function linksHTML(p) {
   return h;
 }
 
-const ASSET_V = '202611161144';
+const ASSET_V = '202611251930';
 const imgSrc = (p) => `${p.img}?v=${ASSET_V}`;
 const coverClass = (p) => (p.logo ? `cover logo-cover ${p.logo}` : "cover");
 
