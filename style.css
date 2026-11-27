@@ -98,6 +98,7 @@ h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.1; letter-spacing: -.
 .stat:hover { background: #18181b; }
 .stat b { display: block; font-size: 2.1rem; font-weight: 700; letter-spacing: -.03em; color: var(--fg); }
 .stat b em { font-style: normal; color: var(--hot); }
+.stat b.stat-word { font-size: 1.55rem; line-height: 1.35; overflow-wrap: anywhere; }
 .stat span { color: var(--fg3); font-size: .86rem; }
 
 /* filters */
